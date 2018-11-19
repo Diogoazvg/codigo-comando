@@ -1,0 +1,41 @@
+<div class='page-header'>
+  <h1>
+    <%= t('Listing Posts') %> (<%= @count_posts %>)  <small><%= @post %></small>
+    <div class='pull-right'>
+      <%= link_to new_post_path(), class: 'btn btn-info' do %>
+        <i class='glyphicon glyphicon-plus'></i> <%= t('New Post') %>
+      <% end %>
+    </div>
+  </h1>
+</div>
+
+<table class='table table-hover table-striped' id='datatable'>
+  <thead>
+  <tr>
+      <th>Name</th>
+      <th>Birtday</th>
+    <th></th>
+  </tr>
+
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+        <td><%= post.name %></td>
+        <td><%= post.birtday %></td>
+      <td class='actions text-center'>
+        <%= link_to t('Show'), post_path(post), class: 'btn btn-sm btn-info' %>
+        <%= link_to t('Edit'), edit_post_path(post), class: 'btn btn-sm btn-warning' %>
+        <%= link_to t('Destroy'), post_path(post), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: t('Are you sure?') } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Get Foobar!", '#', id: "bar", class: 'button' %><!--
+
+<!--%%= paginate @posts %-->
+<script>
+  $('#datatable').DataTable();
+</script>

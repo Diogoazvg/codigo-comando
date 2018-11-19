@@ -66,3 +66,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'simple_form'
 gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
+gem 'jquery-datatables-rails', '~> 3.4.0'
+gem 'rails-ujs'
+gem 'jquery-rails'
